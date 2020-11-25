@@ -4,7 +4,7 @@
 2. The first node is called <b>Head</b>.
 3. The last node is called <b>Tail</b>.
 4. Linked list are <b>null</b> terminated which signifies that it's the end of the list.
-![alt text](https://github.com/PS00161093/linked-list/blob/main/LinkedList.jpg?raw=true)
+![alt text](https://github.com/PS00161093/linked-list/blob/main/images/LinkedList.jpg?raw=true)
 https://visualgo.net/en/list - Demo.
 5. Linked list is not synchronized.
 6. Iterators returned are fail-fast. Hence, can throw <code>ConcurrentModificationException</code>.
@@ -16,7 +16,8 @@ https://visualgo.net/en/list - Demo.
 9. Two Constructors:
 <br>a. <code>public LinkedList() { } </code> Constructs an empty list.
 <br>b. <code>public LinkedList(Collection<? extends E> c) { }</code> Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
-10. Inner class that stores values:![alt text](https://github.com/PS00161093/linked-list/blob/main/LinkedListInnerClass.jpg?raw=true)
+10. Inner class that stores values: <br>
+![alt text](https://github.com/PS00161093/linked-list/blob/main/images/LinkedListInnerClass.jpg?raw=true)
 11. Operations & their Big-O:
 <br>a. prepend O(1)
 <br>b. append O(1)
