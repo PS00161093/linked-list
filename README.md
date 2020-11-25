@@ -8,8 +8,14 @@
 5. Linked list is not synchronized.
 6. Iterators returned are fail-fast. Hence, can throw <code>ConcurrentModificationException</code>.
 7. Class definition: <br>
-<code>public class LinkedList<E><br>
-extends AbstractSequentialList<E><br>
+<code>public class LinkedList<E> 
+extends AbstractSequentialList<E> 
 implements List<E>, Deque<E>, Cloneable, java.io.Serializable
 </code>
-8. 
+8. Class variables:
+<br><code>transient int size = 0;</code> 
+<br><code>transient Node<E> first;</code> Pointer to first node.
+<br><code>transient Node<E> last;</code> Pointer to last node.
+9. Two Constructors:
+<br><code>public LinkedList() { } </code> Constructs an empty list.
+<br><code>public LinkedList(Collection<? extends E> c) { }</code> Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
