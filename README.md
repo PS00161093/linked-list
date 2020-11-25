@@ -18,18 +18,24 @@ https://visualgo.net/en/list - Demo.
 <br>b. <code>public LinkedList(Collection<? extends E> c) { }</code> Constructs a list containing the elements of the specified collection, in the order they are returned by the collection's iterator.
 10. Inner class that stores values:<code>
 
-        private static class Node<E> {
-        
-            E item;
-            Node<E> next;
-            Node<E> prev;
-    
-            Node(Node<E> prev, E element, Node<E> next) {
-                this.item = element;
-                this.next = next;
-                this.prev = prev;
-            }
+                private static class Node<E> {
+                
+                    E item;
+                    Node<E> next;
+                    Node<E> prev;
             
-        }
-</code>
-11. 
+                    Node(Node<E> prev, E element, Node<E> next) {
+                        this.item = element;
+                        this.next = next;
+                        this.prev = prev;
+                    }
+                    
+                }</code>
+11. Operations & their Big-O:
+<br>a. prepend O(1)
+<br>b. append O(1)
+<br>c. lookup O(n)
+<br>d. insert O(n)
+<br>e. delete O(n)
+
+12. 
