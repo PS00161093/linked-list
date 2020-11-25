@@ -30,13 +30,13 @@ https://visualgo.net/en/list - Demo.
                         this.prev = prev;
                     }
                     
-                }</code>
-<br>
+                }
+</code><br>
 11. Operations & their Big-O:
-a. prepend O(1)
-b. append O(1)
-c. lookup O(n)
-d. insert O(n)
-e. delete O(n)
+<br>a. prepend O(1)
+<br>b. append O(1)
+<br>c. lookup O(n)
+<br>d. insert O(n)
+<br>e. delete O(n)
 
 12. 
