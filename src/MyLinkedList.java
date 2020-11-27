@@ -37,12 +37,30 @@ public class MyLinkedList {
 
     public void getAllItems() {
 
-        Item nextItem = this.head;
-        while (nextItem.next != null){
-            System.out.print(nextItem.value + " ");
-            nextItem = nextItem.next;
+        Item currentItem = this.head;
+        while (currentItem.next != null) {
+            System.out.print(currentItem.value + " ");
+            currentItem = currentItem.next;
         }
-        System.out.print(nextItem.value + " ");
+        System.out.print(currentItem.value + " ");
+    }
+
+    public void pushItem(int index, int newValue) {
+
+        if (index == 0) {
+            prepend(newValue);
+        } else {
+            Item previousItem = null;
+            Item currentItem = this.head;
+            while (index > 0) {
+                previousItem = currentItem;
+                currentItem = currentItem.next;
+                index--;
+            }
+            Item newItem = new Item(newValue);
+            newItem.next = currentItem;
+            previousItem.next = newItem;
+        }
     }
 
 

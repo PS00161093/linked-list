@@ -12,7 +12,17 @@ class App {
         myLinkedList.prepend(6);
         System.out.println("Size = " + myLinkedList.getSize());
 
+        System.out.print("Before pushItem(): ");
         myLinkedList.getAllItems();
+        System.out.println();
 
+        myLinkedList.pushItem(4,15);
+        System.out.print("After pushItem(): ");
+        myLinkedList.getAllItems();
+        System.out.println();
+
+        myLinkedList.pushItem(0,4);
+        System.out.print("After pushItem() at beginning: ");
+        myLinkedList.getAllItems();
     }
 }
