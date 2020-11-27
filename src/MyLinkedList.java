@@ -35,17 +35,14 @@ public class MyLinkedList {
         return size;
     }
 
-    public int[] getAllItems() {
-
-        int[] values = new int[this.size];
+    public void getAllItems() {
 
         Item nextItem = this.head;
-        for (int i = 0; i < size; i++) {
-            values[i] = nextItem.value;
+        while (nextItem.next != null){
+            System.out.print(nextItem.value + " ");
             nextItem = nextItem.next;
         }
-
-        return values;
+        System.out.print(nextItem.value + " ");
     }
 
 

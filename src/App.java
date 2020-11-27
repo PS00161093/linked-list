@@ -12,9 +12,7 @@ class App {
         myLinkedList.prepend(6);
         System.out.println("Size = " + myLinkedList.getSize());
 
-        for (int i : myLinkedList.getAllItems()) {
-            System.out.print(i + " ");
-        }
+        myLinkedList.getAllItems();
 
     }
 }
