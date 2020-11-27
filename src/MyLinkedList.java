@@ -22,6 +22,14 @@ public class MyLinkedList {
 
     }
 
+    public void prepend(int newValue) {
+
+        Item newItem = new Item(newValue, null);
+        newItem.next = this.head;
+        this.head = newItem;
+        size++;
+    }
+
     class Item {
 
         int value;
