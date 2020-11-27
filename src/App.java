@@ -16,7 +16,7 @@ class App {
         myLinkedList.getAllItems();
         System.out.println();
 
-        myLinkedList.pushItem(4,15);
+        myLinkedList.pushItem(1,15);
         System.out.print("After pushItem(): ");
         myLinkedList.getAllItems();
         System.out.println();

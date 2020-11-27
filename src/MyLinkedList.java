@@ -49,6 +49,8 @@ public class MyLinkedList {
 
         if (index == 0) {
             prepend(newValue);
+        } else if (index == this.size) {
+            append(newValue);
         } else {
             Item previousItem = null;
             Item currentItem = this.head;
@@ -60,6 +62,7 @@ public class MyLinkedList {
             Item newItem = new Item(newValue);
             newItem.next = currentItem;
             previousItem.next = newItem;
+            size++;
         }
     }
 
