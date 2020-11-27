@@ -54,11 +54,13 @@ public class MyLinkedList {
         } else {
             Item previousItem = null;
             Item currentItem = this.head;
+
             while (index > 0) {
                 previousItem = currentItem;
                 currentItem = currentItem.next;
                 index--;
             }
+
             Item newItem = new Item(newValue);
             newItem.next = currentItem;
             previousItem.next = newItem;
@@ -73,31 +75,35 @@ public class MyLinkedList {
             currentItem = currentItem.next;
             index--;
         }
+
         return currentItem.value;
     }
 
     public void remove(int index) {
 
         int counter = index;
+
         if (index == 0) {
             this.head = this.head.next;
         } else {
             Item previousItem = null;
             Item currentItem = this.head;
+
             while (counter > 1) {
                 previousItem = currentItem;
                 currentItem = currentItem.next;
                 counter--;
             }
+
             if (index == this.size) {
                 previousItem.next = null;
             } else {
                 previousItem.next = currentItem.next;
             }
         }
+
         size--;
     }
-
 
     class Item {
 
@@ -106,11 +112,8 @@ public class MyLinkedList {
         Item next;
 
         Item(int v) {
-
             this.value = v;
             this.next = null;
         }
-
     }
-
 }
