@@ -30,6 +30,25 @@ public class MyLinkedList {
         size++;
     }
 
+    public int getSize() {
+
+        return size;
+    }
+
+    public int[] getAllItems() {
+
+        int[] values = new int[this.size];
+
+        Item nextItem = this.head;
+        for (int i = 0; i < size; i++) {
+            values[i] = nextItem.value;
+            nextItem = nextItem.next;
+        }
+
+        return values;
+    }
+
+
     class Item {
 
         int value;
@@ -37,6 +56,7 @@ public class MyLinkedList {
         Item next;
 
         Item(int v) {
+
             this.value = v;
             this.next = null;
         }
