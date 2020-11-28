@@ -43,5 +43,10 @@ class App {
         System.out.print("After removing element at index 5: ");
         myLinkedList.remove(5);
         myLinkedList.getAllItems();
+
+        System.out.println();
+        System.out.print("After reversing: ");
+        MyLinkedList reverseList = myLinkedList.reverse();
+        reverseList.getAllItems();
     }
 }

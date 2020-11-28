@@ -105,6 +105,21 @@ public class MyLinkedList {
         size--;
     }
 
+    public MyLinkedList reverse(){
+
+        //We can also update the existing MyLinkedList object instead of creating a new one.
+        MyLinkedList reversedList = new MyLinkedList(this.head.value);
+
+        Item item = this.head.next;
+        while (item.next != null){
+            reversedList.prepend(item.value);
+            item = item.next;
+        }
+        reversedList.prepend(item.value);
+
+        return reversedList;
+    }
+
     class Item {
 
         int value;
