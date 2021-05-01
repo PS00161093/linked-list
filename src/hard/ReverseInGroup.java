@@ -9,67 +9,89 @@ public class ReverseInGroup {
 
         if (head != null && k > 1) {
 
-            ListNode c = head;
-            int size = 0;
-            List<ListNode> list = new ArrayList<>();
-            while (c != null) {
-                c = c.next;
-                size++;
-            }
+            ListNode currNode = head;
+            int size = getSize(currNode);
             int subListCnt = size / k;
-            int tempSize = 0;
-            ListNode res = null;
-            c = head;
+
+            currNode = head;
+            ListNode subList = null;
+            int reversedListSize = 0;
+            List<ListNode> list = new ArrayList<>();
+
             for (int i = 0; i < subListCnt; i++) {
                 int batch = k;
-                while (batch > 0 && c != null) {
-                    res = addtoEnd(res, c.val);
-                    tempSize++;
-                    c = c.next;
+                while (batch > 0 && currNode != null) {
+                    subList = prepend(subList, currNode.val);
+                    reversedListSize++;
+                    currNode = currNode.next;
                     batch--;
                 }
-                list.add(res);
-                res = null;
+                list.add(subList);
+                subList = null;
             }
 
-            ListNode op = list.get(0);
-            for (int i = 1; i < list.size(); i++) {
-                ListNode add = list.get(i);
-                ListNode temp = op;
-                while (temp.next != null) {
-                    temp = temp.next;
-                }
-                temp.next = add;
-            }
-            c = head;
-            if (size - tempSize > 0) {
-                while (tempSize > 0) {
-                    c = c.next;
-                    tempSize--;
-                }
-                op = add(op, c);
-            }
+            ListNode reversed = mergeReversedList(list);
 
-            return op;
+            currNode = head;
+
+            return (size - reversedListSize > 0) ? addRemaining(currNode, reversedListSize, reversed) : reversed;
+
         }
+
         return head;
     }
 
-    ListNode add(ListNode o, ListNode l) {
-        ListNode t = o;
-        while (t.next != null) {
-            t = t.next;
-        }
-        t.next = l;
+    private ListNode mergeReversedList(List<ListNode> list) {
 
-        return o;
+        ListNode reversed = list.get(0);
+
+        for (int i = 1; i < list.size(); i++) {
+            ListNode temp = reversed;
+            while (temp.next != null) temp = temp.next;
+            temp.next = list.get(i);
+        }
+
+        return reversed;
     }
 
-    ListNode addtoEnd(ListNode node, int v) {
+    private ListNode addRemaining(ListNode currNode, int reversedListSize, ListNode reversed) {
 
-        if (node == null) return new ListNode(v);
-        ListNode newNode = new ListNode(v);
+        while (reversedListSize > 0) {
+            currNode = currNode.next;
+            reversedListSize--;
+        }
+
+        return append(reversed, currNode);
+    }
+
+    private int getSize(ListNode currNode) {
+
+        int size = 0;
+
+        while (currNode != null) {
+            currNode = currNode.next;
+            size++;
+        }
+
+        return size;
+    }
+
+    ListNode append(ListNode originalNode, ListNode nodeToAdd) {
+
+        ListNode currNode = originalNode;
+
+        while (currNode.next != null) currNode = currNode.next;
+        currNode.next = nodeToAdd;
+
+        return originalNode;
+    }
+
+    ListNode prepend(ListNode node, int val) {
+
+        if (node == null) return new ListNode(val);
+        ListNode newNode = new ListNode(val);
         newNode.next = node;
+
         return newNode;
     }
 
