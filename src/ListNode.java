@@ -3,9 +3,9 @@
  */
 class ListNode {
 
-    int val;
+    public int val;
 
-    ListNode next;
+    public ListNode next;
 
     ListNode() {
     }
