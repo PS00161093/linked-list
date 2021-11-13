@@ -1,29 +1,22 @@
 public class MyLinkedList {
-
     Item head;
-
     Item tail;
-
     int size = 0;
 
     public MyLinkedList(int value) {
-
         this.head = new Item(value);
         this.tail = this.head;
         size++;
     }
 
     public void append(int newValue) {
-
         Item newItem = new Item(newValue);
         this.tail.next = newItem;
         this.tail = newItem;
         size++;
-
     }
 
     public void prepend(int newValue) {
-
         Item newItem = new Item(newValue);
         newItem.next = this.head;
         this.head = newItem;
@@ -31,12 +24,10 @@ public class MyLinkedList {
     }
 
     public int getSize() {
-
         return size;
     }
 
     public void getAllItems() {
-
         Item currentItem = this.head;
         while (currentItem.next != null) {
             System.out.print(currentItem.value + " ");
@@ -46,7 +37,6 @@ public class MyLinkedList {
     }
 
     public void pushItem(int index, int newValue) {
-
         if (index == 0) {
             prepend(newValue);
         } else if (index == this.size) {
@@ -54,13 +44,11 @@ public class MyLinkedList {
         } else {
             Item previousItem = null;
             Item currentItem = this.head;
-
             while (index > 0) {
                 previousItem = currentItem;
                 currentItem = currentItem.next;
                 index--;
             }
-
             Item newItem = new Item(newValue);
             newItem.next = currentItem;
             previousItem.next = newItem;
@@ -69,7 +57,6 @@ public class MyLinkedList {
     }
 
     public int getItemAtIndex(int index) {
-
         Item currentItem = this.head;
         while (index > 0) {
             currentItem = currentItem.next;
@@ -80,38 +67,31 @@ public class MyLinkedList {
     }
 
     public void remove(int index) {
-
         int counter = index;
-
         if (index == 0) {
             this.head = this.head.next;
         } else {
             Item previousItem = null;
             Item currentItem = this.head;
-
             while (counter > 1) {
                 previousItem = currentItem;
                 currentItem = currentItem.next;
                 counter--;
             }
-
-            if (index == this.size) {
+            if (index == this.size)
                 previousItem.next = null;
-            } else {
+            else
                 previousItem.next = currentItem.next;
-            }
         }
 
         size--;
     }
 
-    public MyLinkedList reverse(){
+    public MyLinkedList reverse() {
 
-        //We can also update the existing MyLinkedList object instead of creating a new one.
         MyLinkedList reversedList = new MyLinkedList(this.head.value);
-
         Item item = this.head.next;
-        while (item.next != null){
+        while (item.next != null) {
             reversedList.prepend(item.value);
             item = item.next;
         }
@@ -120,10 +100,8 @@ public class MyLinkedList {
         return reversedList;
     }
 
-    class Item {
-
+    static class Item {
         int value;
-
         Item next;
 
         Item(int v) {
