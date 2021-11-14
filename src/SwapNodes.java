@@ -1,3 +1,5 @@
+import src.ListNode;
+
 /**
  * Swap pair nodes
  *

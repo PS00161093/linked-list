@@ -1,6 +1,6 @@
 package medium;
 
-import hard.ListNode;
+import src.ListNode;
 
 import java.util.ArrayList;
 import java.util.List;

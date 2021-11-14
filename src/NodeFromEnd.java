@@ -1,3 +1,5 @@
+import src.ListNode;
+
 /**
  * Problem URL: https://practice.geeksforgeeks.org/problems/nth-ListNode-from-end-of-linked-list/1#
  */

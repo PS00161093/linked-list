@@ -1,3 +1,5 @@
+import src.ListNode;
+
 /**
  * Find cyclic dependency in linked-list: Floyd's cycle-finding algorithm, also known as tortoise and hare algorithm.
  * <p>
